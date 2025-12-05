@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-VariableFont_wght.ttf')
+    format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf')
+    format('truetype');
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/static/JetBrainsMono-BoldItalic.ttf')
+    format('truetype');
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --color-white: hsl(0, 100%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey-950: hsl(255, 22%, 4%);
+  --color-grey-900: hsl(248, 17%, 9%);
+  --color-grey-850: hsl(248, 15%, 11%);
+  --color-grey-800: hsl(248, 10%, 15%);
+  --color-grey-700: hsl(248, 5%, 34%);
+  --color-grey-600: hsl(251, 9%, 53%);
+  --color-grey-200: hsl(252, 11%, 91%);
+  --color-green-200: hsl(127, 100%, 82%);
+  --color-yellow-300: hsl(42, 91%, 68%);
+  --color-orange-400: hsl(13, 95%, 66%);
+  --color-red-500: hsl(0, 91%, 63%);
+  --color-black-gradient: linear-gradient(
+    to right,
+    hsl(248, 17%, 9%),
+    hsl(255, 22%, 4%)
+  );
+  /* typography */
+  --font-family-base: 'JetBrains Mono', monospace;
+  --font-weight-bold: 700;
+  --font-size-base: 16px;
+  --line-height-base: 1.25;
+  /* border radius */
+  --radius-full: 50%;
+  /* spacing */
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-700: 3.5rem;
+  --spacing-1000: 5rem;
+  --spacing-1300: 6.5rem;
+  --spacing-1600: 8rem;
+  --spacing-2000: 10rem;
+  --spacing-2200: 11rem;
+  --spacing-2300: 11.5rem;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--color-grey-950);
+  color: var(--color-grey-200);
+  font: var(--font-weight-bold) var(--font-size-base) / var(--line-height-base)
+    var(--font-family-base);
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}

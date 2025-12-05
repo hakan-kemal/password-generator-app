@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Password generator app</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Password Generator</h1>
+
+      <div>
+        <div>
+          <p>P4$5W0rD!</p>
+          <img src="./assets/images/icon-copy.svg" alt="Copy to clipboard" />
+        </div>
+
+        <div>
+          <div>
+            <label for="character-length">Character Length</label>
+            <input
+              type="range"
+              id="character-length"
+              name="character-length"
+              min="8"
+              max="24"
+            />
+          </div>
+
+          <fieldset>
+            <div>
+              <input
+                type="checkbox"
+                id="uppercase"
+                name="format"
+                value="uppercase"
+              />
+              <label for="uppercase">Include Uppercase Letters</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="lowercase"
+                name="format"
+                value="lowercase"
+              />
+              <label for="lowercase">Include Lowercase Letters</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="numbers"
+                name="format"
+                value="numbers"
+              />
+              <label for="numbers">Include Numbers</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="symbols"
+                name="format"
+                value="symbols"
+              />
+              <label for="symbols">Include Symbols</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <div id="password-strength">
+              <p>Strength</p>
+              <div id="strength-bars">
+                <div>|</div>
+                <div>|</div>
+                <div>|</div>
+                <div>|</div>
+              </div>
+            </div>
+
+            <button type="button" id="generate-password">
+              Generate
+              <img
+                src="./assets/images/icon-arrow-right.svg"
+                alt="Generate password"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
