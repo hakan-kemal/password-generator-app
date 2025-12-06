@@ -1,3 +1,5 @@
+@import url('reset.css');
+
 @font-face {
   font-family: 'JetBrains Mono';
   src: url('/assets/fonts/JetBrainsMono-VariableFont_wght.ttf')
@@ -91,3 +93,149 @@ html {
 body {
   min-height: 100vh;
 }
+
+main {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: var(--spacing-200); */
+}
+
+.app-title {
+  font-size: 1rem;
+  color: var(--color-grey-600);
+}
+
+.main-container {
+  width: 100%;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--spacing-200);
+  background-color: var(--color-grey-800);
+  padding: var(--spacing-200);
+  color: var(--color-grey-700);
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  margin: var(--spacing-200);
+  background-color: var(--color-grey-800);
+  padding: var(--spacing-200);
+  color: var(--color-grey-200);
+}
+
+.character-length-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-100);
+}
+
+.label-with-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.character-length-value {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-green-200);
+}
+
+.format-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  border: none;
+}
+
+.format-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+.password-strength-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  justify-content: space-between;
+}
+
+.password-strength {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-grey-850);
+  padding: 0.875rem var(--spacing-200);
+  text-transform: uppercase;
+  color: var(--color-grey-600);
+}
+
+.strength-bars {
+  display: flex;
+  gap: var(--spacing-100);
+
+  & div {
+    width: 0.625rem;
+    height: 1.75rem;
+    border: 2px solid var(--color-grey-200);
+  }
+}
+
+.generate-password-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-200);
+  width: 100%;
+  border: 2px solid var(--color-green-200);
+  padding: var(--spacing-200) var(--spacing-1300);
+  background-color: var(--color-green-200);
+  color: var(--color-grey-800);
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25rem;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  /* &:hover,
+  &:focus-visible {
+    background-color: var(--color-grey-800);
+    outline: 2px solid var(--color-green-200);
+    color: var(--color-green-200);
+  } */
+
+  & img {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+
+/* display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-100);
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.5625rem var(--spacing-300);
+  background-color: var(--color-green-400);
+  color: var(--color-green-900);
+  font-family: var(--font-family-base);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  cursor: pointer;
+  text-transform: uppercase; */

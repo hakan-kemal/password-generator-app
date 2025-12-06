@@ -16,77 +16,86 @@
   </head>
   <body>
     <main>
-      <h1>Password Generator</h1>
+      <h1 class="app-title">Password Generator</h1>
 
-      <div>
-        <div>
+      <div class="main-container">
+        <div class="password-container">
           <p>P4$5W0rD!</p>
           <img src="./assets/images/icon-copy.svg" alt="Copy to clipboard" />
         </div>
 
-        <div>
-          <div>
-            <label for="character-length">Character Length</label>
+        <div class="settings-container">
+          <div class="character-length-container">
+            <div class="label-with-value">
+              <label for="character-length">Character Length</label
+              ><span class="character-length-value" id="character-length-value"
+                >0</span
+              >
+            </div>
             <input
               type="range"
               id="character-length"
               name="character-length"
-              min="8"
+              min="0"
               max="24"
             />
           </div>
 
-          <fieldset>
-            <div>
+          <fieldset class="format-options-container">
+            <div class="format-option">
               <input
                 type="checkbox"
                 id="uppercase"
-                name="format"
+                name="format-checkbox"
                 value="uppercase"
               />
               <label for="uppercase">Include Uppercase Letters</label>
             </div>
-            <div>
+            <div class="format-option">
               <input
                 type="checkbox"
                 id="lowercase"
-                name="format"
+                name="format-checkbox"
                 value="lowercase"
               />
               <label for="lowercase">Include Lowercase Letters</label>
             </div>
-            <div>
+            <div class="format-option">
               <input
                 type="checkbox"
                 id="numbers"
-                name="format"
+                name="format-checkbox"
                 value="numbers"
               />
               <label for="numbers">Include Numbers</label>
             </div>
-            <div>
+            <div class="format-option">
               <input
                 type="checkbox"
                 id="symbols"
-                name="format"
+                name="format-checkbox"
                 value="symbols"
               />
               <label for="symbols">Include Symbols</label>
             </div>
           </fieldset>
 
-          <div>
-            <div id="password-strength">
+          <div class="password-strength-container">
+            <div class="password-strength" id="password-strength">
               <p>Strength</p>
-              <div id="strength-bars">
-                <div>|</div>
-                <div>|</div>
-                <div>|</div>
-                <div>|</div>
+              <div class="strength-bars" id="strength-bars">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
               </div>
             </div>
 
-            <button type="button" id="generate-password">
+            <button
+              type="button"
+              id="generate-password"
+              class="generate-password-btn"
+            >
               Generate
               <img
                 src="./assets/images/icon-arrow-right.svg"
