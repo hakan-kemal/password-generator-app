@@ -244,12 +244,12 @@ main {
   cursor: pointer;
   text-transform: uppercase;
 
-  &:disabled {
+  &.disabled {
     cursor: not-allowed;
   }
 
-  &:not(:disabled) .icon-copy:hover,
-  &:not(:disabled) .icon-copy:focus-visible {
+  &:not(.disabled) .icon-copy:hover,
+  &:not(.disabled) .icon-copy:focus-visible {
     color: var(--color-grey-200);
   }
 }
@@ -271,8 +271,8 @@ main {
   cursor: pointer;
   text-transform: uppercase;
 
-  &:hover,
-  &:focus-visible {
+  &:not(.disabled):hover,
+  &:not(.disabled):focus-visible {
     background-color: transparent;
     color: var(--color-green-200);
   }
@@ -280,6 +280,10 @@ main {
   & .icon-arrow-right {
     width: 0.75rem;
     height: 0.75rem;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
   }
 }
 

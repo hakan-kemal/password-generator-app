@@ -25,7 +25,8 @@ const initializePasswordGenerator = () => {
   characterLengthValue.textContent = characterLengthInput.value;
 
   copyStatus.classList.add('hidden');
-  copyPasswordButton.setAttribute('disabled', true);
+  copyPasswordButton.classList.add('disabled');
+  generatePasswordButton.classList.add('disabled');
 
   passwordUppercaseOption.checked = false;
   passwordLowercaseOption.checked = false;
@@ -74,10 +75,12 @@ const generateRandomPassword = () => {
 
   if (
     !charset ||
-    passwordLength < 1 ||
+    passwordLength < 6 ||
     !Object.values(opts).some((val) => val)
   ) {
-    return;
+    throw new Error(
+      'Invalid input: Please select at least one character set and specify a password length of 6 or more.'
+    );
   }
 
   const strengthIndex = Object.values(opts).filter(Boolean).length - 1;
@@ -93,7 +96,7 @@ const generateRandomPassword = () => {
     (n) => charset[n % charset.length]
   ).join('');
 
-  copyPasswordButton.removeAttribute('disabled');
+  copyPasswordButton.classList.remove('disabled');
   generatedPassword.classList.add('new-password');
   passwordStrengthOutput.textContent = strengthClass;
   strengthBars.classList.add(strengthClass);
@@ -103,6 +106,8 @@ const generateRandomPassword = () => {
 };
 
 const handleCharacterLengthChange = (event) => {
+  generatePasswordButton.classList.remove('disabled');
+
   const { value } = event.target;
   characterLengthValue.textContent = value;
 };
