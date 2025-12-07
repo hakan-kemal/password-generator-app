@@ -51,38 +51,61 @@
         <div class="settings-container">
           <div class="character-length-container">
             <div class="label-with-value">
-              <label class="character-length-label" for="character-length">
+              <label
+                class="character-length-label"
+                for="character-length-input"
+              >
                 Character Length
               </label>
-              <span class="character-length-value" id="character-length-value">
+              <p class="character-length-value" id="character-length-value">
                 0
-              </span>
+              </p>
             </div>
             <input
               type="range"
-              id="character-length"
+              id="character-length-input"
               name="character-length"
               min="0"
-              max="24"
+              max="20"
             />
           </div>
 
           <fieldset class="format-options-container">
             <legend class="sr-only">Password Options</legend>
             <div class="format-option">
-              <input type="checkbox" id="uppercase" value="uppercase" />
+              <input
+                type="checkbox"
+                id="uppercase"
+                value="uppercase"
+                name="format"
+              />
               <label for="uppercase">Include Uppercase Letters</label>
             </div>
             <div class="format-option">
-              <input type="checkbox" id="lowercase" value="lowercase" />
+              <input
+                type="checkbox"
+                id="lowercase"
+                value="lowercase"
+                name="format"
+              />
               <label for="lowercase">Include Lowercase Letters</label>
             </div>
             <div class="format-option">
-              <input type="checkbox" id="numbers" value="numbers" />
+              <input
+                type="checkbox"
+                id="numbers"
+                value="numbers"
+                name="format"
+              />
               <label for="numbers">Include Numbers</label>
             </div>
             <div class="format-option">
-              <input type="checkbox" id="symbols" value="symbols" />
+              <input
+                type="checkbox"
+                id="symbols"
+                value="symbols"
+                name="format"
+              />
               <label for="symbols">Include Symbols</label>
             </div>
           </fieldset>
@@ -91,7 +114,10 @@
             <div class="password-strength" id="password-strength">
               <p>Strength</p>
               <div class="strength-bars" id="strength-bars">
-                <p>MEDIUM</p>
+                <p
+                  class="password-strength-output"
+                  id="password-strength-output"
+                ></p>
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>

@@ -202,6 +202,10 @@ main {
   gap: var(--spacing-100);
 }
 
+.password-strength-output {
+  color: var(--color-grey-200);
+}
+
 .strength-bars .bar {
   width: 0.625rem;
   height: 1.75rem;
@@ -240,8 +244,12 @@ main {
   cursor: pointer;
   text-transform: uppercase;
 
-  & .icon-copy:hover,
-  & .icon-copy:focus-visible {
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled) .icon-copy:hover,
+  &:not(:disabled) .icon-copy:focus-visible {
     color: var(--color-grey-200);
   }
 }
@@ -253,7 +261,7 @@ main {
   gap: var(--spacing-200);
   width: 100%;
   border: 2px solid var(--color-green-200);
-  padding: var(--spacing-200) var(--spacing-1300);
+  padding-block: var(--spacing-200);
   background-color: var(--color-green-200);
   color: var(--color-grey-800);
   font-family: var(--font-family-base);
@@ -332,10 +340,13 @@ main {
     }
   }
 
-  .strength-bars p {
+  .strength-bars {
+    height: 2rem;
+  }
+
+  .password-strength-output {
     font-size: 1.5rem;
     line-height: 2rem;
-    color: var(--color-grey-200);
     margin-right: var(--spacing-100);
   }
 
