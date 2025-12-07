@@ -64,6 +64,7 @@
   --spacing-200: 1rem;
   --spacing-300: 1.5rem;
   --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
   --spacing-700: 3.5rem;
   --spacing-1000: 5rem;
   --spacing-1300: 6.5rem;
@@ -197,6 +198,7 @@ main {
 
 .strength-bars {
   display: flex;
+  align-items: center;
   gap: var(--spacing-100);
 }
 
@@ -206,15 +208,15 @@ main {
   border: 2px solid var(--color-grey-200);
 }
 
-.strength-bars.too-weak .bar:first-of-type {
+.strength-bars.too-weak .bar:nth-child(-n + 2) {
   background-color: var(--color-red-500);
   border-color: var(--color-red-500);
 }
-.strength-bars.weak .bar:nth-child(-n + 2) {
+.strength-bars.weak .bar:nth-child(-n + 3) {
   background-color: var(--color-orange-400);
   border-color: var(--color-orange-400);
 }
-.strength-bars.medium .bar:nth-child(-n + 3) {
+.strength-bars.medium .bar:nth-child(-n + 4) {
   background-color: var(--color-yellow-300);
   border-color: var(--color-yellow-300);
 }
@@ -275,4 +277,71 @@ main {
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 48rem) {
+  .app-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--color-grey-600);
+  }
+
+  .main-container {
+    max-width: 33.75rem;
+    margin: 0 auto;
+  }
+
+  .password-container {
+    margin-block: var(--spacing-400) var(--spacing-300);
+    padding: 1.1875rem var(--spacing-400);
+    font-size: 2rem;
+    line-height: 2.625rem;
+  }
+
+  .copy-status,
+  .character-length-label,
+  .format-options-container {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .settings-container {
+    margin-top: var(--spacing-300);
+    padding: var(--spacing-300) var(--spacing-400) var(--spacing-500);
+  }
+
+  .character-length-container {
+    gap: var(--spacing-200);
+  }
+
+  .character-length-value {
+    font-size: 2rem;
+    line-height: 2.625rem;
+  }
+
+  .password-strength-container {
+    gap: var(--spacing-400);
+  }
+
+  .password-strength {
+    padding: 1.25rem var(--spacing-400);
+
+    & p {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .strength-bars p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--color-grey-200);
+    margin-right: var(--spacing-100);
+  }
+
+  .generate-password-btn {
+    padding-block: 1.125rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
 }
