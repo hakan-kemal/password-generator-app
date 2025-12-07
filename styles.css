@@ -100,7 +100,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* gap: var(--spacing-200); */
 }
 
 .app-title {
@@ -122,6 +121,10 @@ main {
   color: var(--color-grey-700);
   font-size: 1.5rem;
   line-height: 2rem;
+
+  & .new-password {
+    color: var(--color-grey-200);
+  }
 }
 
 .settings-container {
@@ -131,20 +134,18 @@ main {
   margin: var(--spacing-200);
   background-color: var(--color-grey-800);
   padding: var(--spacing-200);
-  color: var(--color-grey-200);
 }
 
 .character-length-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: var(--spacing-100);
 }
 
 .label-with-value {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .character-length-value {
@@ -160,9 +161,21 @@ main {
   border: none;
 }
 
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -0.0625rem;
+  border: 0;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  white-space: nowrap;
+}
+
 .format-option {
   display: flex;
-  align-items: center;
   gap: var(--spacing-200);
 }
 
@@ -170,7 +183,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-200);
-  justify-content: space-between;
 }
 
 .password-strength {
@@ -179,18 +191,56 @@ main {
   justify-content: space-between;
   background-color: var(--color-grey-850);
   padding: 0.875rem var(--spacing-200);
-  text-transform: uppercase;
   color: var(--color-grey-600);
+  text-transform: uppercase;
 }
 
 .strength-bars {
   display: flex;
   gap: var(--spacing-100);
+}
 
-  & div {
-    width: 0.625rem;
-    height: 1.75rem;
-    border: 2px solid var(--color-grey-200);
+.strength-bars .bar {
+  width: 0.625rem;
+  height: 1.75rem;
+  border: 2px solid var(--color-grey-200);
+}
+
+.strength-bars.too-weak .bar:first-of-type {
+  background-color: var(--color-red-500);
+  border-color: var(--color-red-500);
+}
+.strength-bars.weak .bar:nth-child(-n + 2) {
+  background-color: var(--color-orange-400);
+  border-color: var(--color-orange-400);
+}
+.strength-bars.medium .bar:nth-child(-n + 3) {
+  background-color: var(--color-yellow-300);
+  border-color: var(--color-yellow-300);
+}
+.strength-bars.strong .bar {
+  background-color: var(--color-green-200);
+  border-color: var(--color-green-200);
+}
+
+.copy-password-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-200);
+  border: none;
+  background: none;
+  color: var(--color-green-200);
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25rem;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  & .icon-copy:hover,
+  & .icon-copy:focus-visible {
+    color: var(--color-grey-200);
   }
 }
 
@@ -211,31 +261,18 @@ main {
   cursor: pointer;
   text-transform: uppercase;
 
-  /* &:hover,
+  &:hover,
   &:focus-visible {
-    background-color: var(--color-grey-800);
-    outline: 2px solid var(--color-green-200);
+    background-color: transparent;
     color: var(--color-green-200);
-  } */
+  }
 
-  & img {
+  & .icon-arrow-right {
     width: 0.75rem;
     height: 0.75rem;
   }
 }
 
-/* display: flex;
-  justify-content: center;
-  margin-top: var(--spacing-100);
-  width: 100%;
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 0.5625rem var(--spacing-300);
-  background-color: var(--color-green-400);
-  color: var(--color-green-900);
-  font-family: var(--font-family-base);
-  font-size: 1.25rem;
-  font-weight: var(--font-weight-bold);
-  line-height: 1.5;
-  cursor: pointer;
-  text-transform: uppercase; */
+.hidden {
+  display: none;
+}
